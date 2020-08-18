@@ -1,13 +1,11 @@
-package com.myogardener.foodparadise.adapter
-
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.myogardener.foodparadise.R
+import com.myogardener.foodparadise.model.Category
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_home.view.*
-import com.myogardener.foodparadise.model.Category as Category
 
 class HomeAdapter(var categoryList: List<Category> = ArrayList<Category>()) :
     RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
@@ -18,8 +16,7 @@ class HomeAdapter(var categoryList: List<Category> = ArrayList<Category>()) :
         this.mClickListener = clickListener
     }
 
-
-    inner class HomeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
+    inner class HomeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),View.OnClickListener {
 
         lateinit var category: Category
 
@@ -28,25 +25,19 @@ class HomeAdapter(var categoryList: List<Category> = ArrayList<Category>()) :
         }
 
         fun bind(category: Category) {
-            this.category=category
+            this.category = category
             itemView.categories_name.text = category.strCategory
 
-//            Picasso.get()
-//                .load("https://image.tmdb.org/t/p/w500/"+result.poster_path)
-//                .placeholder(R.drawable.ic_launcher_background)
-//                .into(itemView.image)
+            Picasso.get()
+                .load(category.strCategoryThumb)
+                .placeholder(R.drawable.ic_launcher_background)
+                .into(itemView.img_categories)
         }
 
-        override fun onClick(p0: View?) {
-
+        override fun onClick(view: View?) {
+            mClickListener?.onClcik(category)
         }
-
-//        override fun onClick(view: View?) {
-//            mClickListener?.onClcik(result)
-//        }
     }
-
-
 
     fun updateArticle(categoryList: List<Category>) {
         this.categoryList = categoryList
@@ -72,4 +63,3 @@ class HomeAdapter(var categoryList: List<Category> = ArrayList<Category>()) :
     }
 
 }
-
