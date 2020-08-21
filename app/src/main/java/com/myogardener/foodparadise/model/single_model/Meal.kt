@@ -1,4 +1,4 @@
-package com.myogardener.foodparadise.model
+package com.myogardener.foodparadise.model.single_model
 
 data class Meal(
     val idMeal: String,

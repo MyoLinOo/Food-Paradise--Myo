@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.DetailFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <TextView
+            android:id="@+id/detail_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Brown Two Chicken"
+            android:textSize="35dp"
+            android:textAlignment="center"
+            android:fontFamily="@font/abrilfatface"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+        <TextView
+            android:id="@+id/detail_meal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Chicken"
+            app:layout_constraintTop_toBottomOf="@id/detail_title"
+            android:textSize="26dp"
+            android:maxLines="1"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:paddingVertical="5dp"
+            android:background="@android:color/holo_orange_light"
+            android:textColor="@android:color/black"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/detail_country"/>
+        <TextView
+            android:id="@+id/detail_country"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Italian"
+            android:textColor="@android:color/background_light"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:maxLines="1"
+            android:background="#DF434040"
+            android:paddingVertical="5dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/detail_title"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/detail_meal"/>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_img"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            app:layout_constraintTop_toBottomOf="@id/detail_meal">
+
+            <ImageView
+                android:id="@+id/detail_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_launcher_background"/>
+
+        </androidx.cardview.widget.CardView>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ingredent_recide_youtube"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="#BACDC7C7"
+            app:layout_constraintTop_toBottomOf="@+id/cv_img">
+
+            <ImageView
+                android:id="@+id/detail_ingredent"
+                android:layout_width="0dp"
+                android:layout_marginTop="4dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/ic_ingrdients"
+                app:layout_constraintRight_toLeftOf="@id/youtube"/>
+            <ImageView
+                android:id="@+id/youtube"
+                android:layout_width="0dp"
+                android:layout_marginTop="4dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_youtube"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/detail_ingredent"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ingredents"
+                android:textColor="#2E2D2D"
+                android:textSize="20dp"
+                app:layout_constraintTop_toBottomOf="@id/detail_ingredent"
+                app:layout_constraintRight_toRightOf="@id/detail_ingredent"
+                app:layout_constraintLeft_toLeftOf="@id/detail_ingredent"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Youtube"
+                android:textColor="#2E2D2D"
+                android:textSize="20dp"
+                app:layout_constraintTop_toBottomOf="@id/youtube"
+                app:layout_constraintRight_toRightOf="@id/youtube"
+                app:layout_constraintLeft_toLeftOf="@id/youtube"/>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="50dp"
+                android:background="#F2393737"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/instructions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Instructions"
+            android:textSize="30dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/abrilfatface"
+            android:textColor="@android:color/black"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ingredent_recide_youtube"/>
+        <TextView
+            android:id="@+id/txt_instructions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="instructions"
+            app:layout_constraintTop_toBottomOf="@+id/instructions"
+            android:layout_marginTop="10dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
+
+</ScrollView>

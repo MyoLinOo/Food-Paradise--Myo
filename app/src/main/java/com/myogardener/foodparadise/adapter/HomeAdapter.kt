@@ -3,7 +3,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.myogardener.foodparadise.R
-import com.myogardener.foodparadise.model.Category
+import com.myogardener.foodparadise.model.detail_model.Meal
+import com.myogardener.foodparadise.model.home_model.Category
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_home.view.*
 
@@ -19,7 +20,6 @@ class HomeAdapter(var categoryList: List<Category> = ArrayList<Category>()) :
     inner class HomeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),View.OnClickListener {
 
         lateinit var category: Category
-
         init {
             itemView.setOnClickListener(this)
         }
@@ -27,7 +27,6 @@ class HomeAdapter(var categoryList: List<Category> = ArrayList<Category>()) :
         fun bind(category: Category) {
             this.category = category
             itemView.categories_name.text = category.strCategory
-
             Picasso.get()
                 .load(category.strCategoryThumb)
                 .placeholder(R.drawable.ic_launcher_background)
@@ -36,6 +35,7 @@ class HomeAdapter(var categoryList: List<Category> = ArrayList<Category>()) :
 
         override fun onClick(view: View?) {
             mClickListener?.onClcik(category)
+
         }
     }
 
@@ -61,5 +61,6 @@ class HomeAdapter(var categoryList: List<Category> = ArrayList<Category>()) :
     interface ClickListener {
         fun onClcik(category: Category)
     }
+
 
 }

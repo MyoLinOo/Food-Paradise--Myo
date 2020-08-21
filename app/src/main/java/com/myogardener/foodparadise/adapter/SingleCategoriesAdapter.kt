@@ -5,28 +5,27 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.myogardener.foodparadise.R
-import com.myogardener.foodparadise.model.Category
-import com.myogardener.foodparadise.model.Meal
+import com.myogardener.foodparadise.model.single_model.Meal
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_category.view.*
-import kotlinx.android.synthetic.main.item_home.view.*
+
 
 class SingleCategoriesAdapter(var mealList: List<Meal> = ArrayList<Meal>()) :
     RecyclerView.Adapter<SingleCategoriesAdapter.HomeViewHolder>() {
 
-//    var mClickListener: ClickListener? = null
-//
-//    fun setOnClickListener(clickListener: ClickListener){
-//        this.mClickListener = clickListener
-//    }
+    var mClickListener: ClickListener? = null
 
-    inner class HomeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    fun setOnClickListener(clickListener: ClickListener){
+        this.mClickListener = clickListener
+    }
+
+    inner class HomeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),View.OnClickListener {
 
         lateinit var meal: Meal
-//
-//        init {
-//            itemView.setOnClickListener(this)
-//        }
+
+        init {
+            itemView.setOnClickListener(this)
+        }
 
         fun bind(meal: Meal) {
             this.meal = meal
@@ -38,9 +37,9 @@ class SingleCategoriesAdapter(var mealList: List<Meal> = ArrayList<Meal>()) :
                 .into(itemView.img_single_category)
         }
 
-//        override fun onClick(view: View?) {
-//            mClickListener?.onClcik(category)
-//        }
+        override fun onClick(view: View?) {
+            mClickListener?.onClcik(meal)
+        }
     }
 
     fun updateArticle(mealList: List<Meal>) {
@@ -62,8 +61,8 @@ class SingleCategoriesAdapter(var mealList: List<Meal> = ArrayList<Meal>()) :
         holder.bind(mealList.get(position))
     }
 
-//    interface ClickListener {
-//        fun onClcik(category: Category)
-//    }
+    interface ClickListener {
+        fun onClcik(meal:Meal)
+    }
 
 }

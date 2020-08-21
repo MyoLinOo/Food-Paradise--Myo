@@ -1,4 +1,4 @@
-package com.myogardener.foodparadise.model
+package com.myogardener.foodparadise.model.home_model
 
 data class Category(
     val idCategory: String,

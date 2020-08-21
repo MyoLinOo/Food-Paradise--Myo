@@ -7,8 +7,6 @@
     tools:context=".fragment.HomeFragment">
 
 
-
-
         <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -61,7 +59,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="centerCrop"
-                        android:src="@color/colorPrimaryDark"
+                        android:src="@drawable/food"
                         tools:layout_editor_absoluteX="0dp"
                         tools:layout_editor_absoluteY="0dp" />
 
@@ -69,9 +67,10 @@
                         android:id="@+id/top_food_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="apple"
-                        android:textColor="#F5F4F8"
+                        android:text="Baked salmon with fennel and tomatoes"
+                        android:textColor="@android:color/background_light"
                         android:textSize="25dp"
+                        android:maxLines="1"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintHorizontal_bias="0.1"
                         app:layout_constraintLeft_toLeftOf="parent"
@@ -109,7 +108,7 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/txt_fist"
+                        android:id="@+id/img_fist"
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
                         android:layout_marginTop="5dp"
@@ -144,7 +143,7 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/txt_country"
+                        android:id="@+id/img_country"
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
                         android:layout_marginTop="5dp"
@@ -178,11 +177,11 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/txt_ingredien"
+                        android:id="@+id/img_ingredien"
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
                         android:layout_marginTop="5dp"
-                        android:src="@drawable/ingredients" />
+                        android:src="@drawable/ingredient" />
 
                     <TextView
                         android:layout_width="wrap_content"
